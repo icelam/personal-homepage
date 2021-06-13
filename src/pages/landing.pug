@@ -1,0 +1,60 @@
+//- data
+include ../data/links
+include ../data/credits
+
+//- mixins
+include ../mixins/icon-buttons
+
+.screen
+  .scene
+    //- header - display time
+    #time.time
+
+    //- content - links to useful tools
+    .scene-content
+      .options#options
+        .options__panel
+          each link in links
+            a.options__card(href=link['url'] class=link['new'] ? 'options__card--new' : '')
+              .options__card__image
+                img(src=link['image'] alt=link['name'])
+              .options__card__description #{link['name']}
+
+      img.character(src="~@images/character.png" alt="Character - myself")
+
+  //- footer - links to github and portfolio, display credits
+  .dialog
+    .dialog__tag
+      .dialog__tag__background
+      .dialog__tag__text Pinky Lam
+
+    .dialog__content#dialog-content(data-text="[\"It’s sunny outside.\", \"What do I want to do today?\"]")
+
+    .controls
+      a.controls__button(target="_blank" href="https://icelam.github.io/" rel="noopener")
+        +icon-buttons(button-name='profile')
+      a.controls__button(target="_blank" href="https://github.com/icelam" rel="noopener noreferrer")
+        +icon-buttons(button-name='github')
+      a.controls__button#credits-open-button
+        +icon-buttons(button-name='credits')
+
+.modal#credits-modal(role="dialog" aria-hidden="true")
+  .modal__wrapper
+    .modal__header(role="heading")
+      | Credits
+
+    .modal__content
+      each credit in credits
+        .credit
+          .credit__resources
+            | #{credit['resources']} made by
+            //- insert a blank pipe for generating space between text and link
+            |
+            a(href=credit['creatorUrl'] target="_blank" rel="noopener noreferrer" class=credit['japaneseFontsForCreator'] ? 'japanese' : '')
+              | #{credit['creator']}
+          a.credit__url(href=credit['resourcesUrl'] target="_blank" rel="noopener noreferrer")
+            | #{credit['resourcesUrl']}
+
+    .modal__footer
+      button.button.button--danger#credits-close-button Close
+

@@ -1,0 +1,10 @@
+mixin icon-buttons
+  - var icon = attributes['button-name']
+
+  case icon
+    when 'credits'
+      include ../assets/images/button-credits.svg
+    when 'github'
+      include ../assets/images/button-github.svg
+    when 'profile'
+      include ../assets/images/button-profile.svg

@@ -1,0 +1,64 @@
+$color-white: #ffffff;
+$color-grey-96: #f5f5f5;
+$color-grey-93: #eeeeee;
+$color-light-grey: #c7c5c6;
+$color-mid-grey: #999fa3;
+$color-dark-grey: #2e2c2d;
+$color-black: #000000;
+$color-blue: #437589;
+$color-blue-110: #3c697b;
+$color-red: #fe8b84;
+$color-dark-red: #ed4e5f;
+
+// Time
+$color-time-stoke: $color-white;
+$color-time-text: $color-dark-grey;
+$color-time-shadow: rgba($color-black, 0.3);
+$color-time-border: $color-dark-grey;
+
+// Dialog
+$color-dialog-text: $color-grey-93;
+$color-dialog-background: $color-dark-grey;
+$color-dialog-tag-background-light: $color-blue;
+$color-dialog-tag-background-dark: $color-blue-110;
+
+// Options
+$color-options-wrapper-background: rgba($color-white, 0.5);
+$color-options-card-background: $color-grey-96;
+$color-options-card-shadow: rgba($color-black, 0.3);
+
+$color-options-button-background: $color-grey-96;
+$color-options-button-border: $color-dark-grey;
+$color-options-button-background-hover-light: $color-blue;
+$color-options-button-background-hover-dark: $color-blue-110;
+$color-options-button-text-hover: $color-white;
+$color-options-button-background-active: $color-dark-grey;
+$color-options-button-border-active: $color-white;
+$color-options-button-text-active: $color-white;
+
+// Simplebar
+$color-simplebar-scrollbar: $color-blue;
+$color-simplebar-scrolltrack: $color-mid-grey;
+
+// Modal
+$color-modal-overlay: rgba($color-black, 0.5);
+$color-modal-background: $color-dark-grey;
+$color-modal-border: $color-white;
+$color-modal-shadow: rgba($color-black, 0.3);
+$color-modal-text: $color-white;
+$color-modal-header-footer-background-light: $color-blue;
+$color-modal-header-footer-background-dark: $color-blue-110;
+
+// Button
+$color-button-border: $color-white;
+$color-button-text: $color-white;
+$color-button-inner-shadow: rgba($color-black, 0.3);
+$color-button-danger-background-light: $color-red;
+$color-button-danger-background-dark: $color-dark-red;
+$color-button-danger-text-outline: $color-dark-red;
+$color-button-danger-background-light-hover: lighten($color-red, 5%);
+$color-button-danger-background-dark-hover: lighten($color-dark-red, 5%);
+$color-button-danger-text-outline-hover: lighten($color-dark-red, 5%);
+
+// Credits
+$color-credit-url: $color-light-grey;

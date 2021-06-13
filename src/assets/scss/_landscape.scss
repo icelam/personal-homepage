@@ -1,0 +1,400 @@
+// Landscape
+@media #{$media-ratio-4-3} {
+  html {
+    background: url('~@images/room.jpg') center center / cover no-repeat;
+    height: 100vh;
+  }
+
+  #app {
+    height: 100%;
+  }
+
+  .screen {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .scene {
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .time {
+    font-weight: bold;
+    font-family: 'Futura';
+    font-size: calculateVh(60);
+    line-height: 1em;
+    color: $color-time-text;
+    -webkit-text-stroke: 0.0625rem $color-time-stoke;
+    -webkit-text-fill-color: $color-time-text;
+    text-shadow: 0 0.1875rem 0.1875rem $color-time-shadow;
+    padding: calculateVh(40) calculateVh(50) calculateVh(24) calculateVh(24);
+    border-bottom: 0.125rem solid $color-time-border;
+  }
+
+  .scene-content {
+    flex: 1 1 auto;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .options {
+    margin-left: calculateVh(40);
+    margin-bottom: calculateVh(66 - 18);
+    margin-right: 5%;
+    width: 54.6875%;
+    height: calculateVh(580);
+    max-height: calculateVh(580);
+    background-color: $color-options-wrapper-background;
+    align-self: center;
+    padding: calculateVh(48) calculateVh(54);
+    border-radius: calculateVh(30);
+
+    &__panel {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &__card {
+      background: $color-options-card-background;
+      box-shadow: 0 0.1875rem 0.0625rem $color-options-card-shadow;
+      display: inline-block;
+      width: calc(50% - #{calculateVh(8)});
+      margin: calculateVh(16) 0 0;
+      position: relative;
+      color: inherit;
+      text-decoration: none;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+
+      &:hover {
+        background: $color-options-card-background;
+        color: inherit;
+      }
+
+      &:active {
+        background: $color-options-card-background;
+        color: inherit;
+      }
+
+      &:nth-child(-n + 2) {
+        margin: 0;
+      }
+
+      &__image {
+        display: block;
+        width: 100%;
+        padding: calculateVh(15) calculateVh(8);
+
+        img {
+          display: block;
+          width: 100%;
+          border: 0;
+        }
+      }
+
+      &__description {
+        padding: calculateVh(5) calculateVh(8) calculateVh(20);
+        text-align: center;
+        font-size: calculateVh(24);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      &--new:before {
+        background: url('~@images/new.svg') top right / cover no-repeat;
+        width: calculateVh(94);
+        height: calculateVh(31);
+        position: absolute;
+        top: 0.125rem;
+        right: 0.125rem;
+        content: ' ';
+      }
+    }
+  }
+
+  .character {
+    position: static;
+    height: calculateVh(680);
+    width: auto;
+    margin-right: 5%;
+    align-self: flex-end;
+  }
+
+  .dialog {
+    height: calculateVh(270);
+    position: relative;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: $color-dialog-background;
+    flex: 1 0 auto;
+
+    &__tag {
+      height: calculateVh(66);
+      width: clamp(30%, 10%, 70%);
+      position: absolute;
+      bottom: calculateVh(270 - 18);
+      left: -1.25rem;
+      z-index: 2;
+      min-width: min-content;
+
+      &__background {
+        width: 100%;
+        height: 100%;
+        transform: skew(30deg, 0);
+        background: repeating-linear-gradient(
+          -35deg,
+          $color-dialog-tag-background-light,
+          $color-dialog-tag-background-light calculateVh(8),
+          $color-dialog-tag-background-dark calculateVh(8),
+          $color-dialog-tag-background-dark calculateVh(16)
+        );
+        border: clamp(0.125rem, calculateVh(8), 0.25rem) solid
+          $color-dialog-background;
+      }
+
+      &__text {
+        width: 100%;
+        min-width: min-content;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        white-space: nowrap;
+        padding: 0 0.75rem;
+        font-size: calculateVh(40);
+        line-height: calculateVh(66);
+        text-align: center;
+        color: $color-dialog-text;
+      }
+    }
+
+    &__content {
+      width: 70%;
+      margin: calculateVh(55) auto 0 auto;
+      font-size: calculateVh(48);
+      color: $color-dialog-text;
+
+      p {
+        margin: 0 0 calculateVh(20) 0;
+      }
+    }
+  }
+
+  .controls {
+    z-index: 2;
+    position: absolute;
+    right: calculateVh(100);
+    top: clamp(calculateVh(-35), calculateVh(-35), -1rem);
+    display: flex;
+
+    &__button > svg {
+      cursor: pointer;
+      width: auto;
+      height: clamp(2rem, calculateVh(70), calculateVh(70));
+      margin-left: calculateVh(20);
+      border: 0;
+    }
+  }
+
+  .modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-color: $color-modal-overlay;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.2s linear;
+
+    &--open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+
+    &__wrapper {
+      width: calculateVh(1052);
+      background-color: $color-modal-background;
+      border: clamp(0.0625rem, calculateVh(4), 0.25rem) solid
+        $color-modal-border;
+      border-radius: calculateVh(30);
+      box-shadow: 0 0 calculateVh(20) $color-modal-shadow;
+      overflow: hidden;
+      opacity: 0;
+      transform: scale(0.7);
+      transition: all 0.2s linear;
+    }
+
+    &--open &__wrapper {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    &__header {
+      color: $color-modal-text;
+      height: calculateVh(80);
+      font-size: calculateVh(48);
+      line-height: calculateVh(40);
+      padding: calculateVh(20);
+      text-align: center;
+      background: repeating-linear-gradient(
+        -45deg,
+        $color-modal_header-footer-background-light,
+        $color-modal_header-footer-background-light calculateVh(8),
+        $color-modal_header-footer-background-dark calculateVh(8),
+        $color-modal_header-footer-background-dark calculateVh(16)
+      );
+      box-shadow: 0 calculateVh(5) calculateVh(5) $color-modal-shadow;
+    }
+
+    &__content {
+      max-height: calculateVh(652);
+      padding: calculateVh(60) calculateVh(90);
+      color: $color-modal-text;
+    }
+
+    &__footer {
+      height: calculateVh(120);
+      background: repeating-linear-gradient(
+        -45deg,
+        $color-modal_header-footer-background-light,
+        $color-modal_header-footer-background-light calculateVh(8),
+        $color-modal_header-footer-background-dark calculateVh(8),
+        $color-modal_header-footer-background-dark calculateVh(16)
+      );
+      box-shadow: 0 calculateVh(-5) calculateVh(5) $color-modal-shadow;
+      padding: calculateVh(20);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .button {
+    padding: calculateVh(16) calculateVh(70);
+    border: clamp(0.0625rem, calculateVh(4), 0.25rem) solid $color-button-border;
+    outline: none;
+    box-shadow: inset 0 0 calculateVh(3) $color-button-inner-shadow;
+    color: $color-button-text;
+    border-radius: calculateVh(10);
+    font-family: inherit;
+    font-size: calculateVh(36);
+    line-height: 1em;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &--danger {
+      background: linear-gradient(
+        180deg,
+        $color-button-danger-background-light 0%,
+        $color-button-danger-background-dark 100%
+      );
+
+      text-shadow: -0.0625rem -0.0625rem 0 $color-button-danger-text-outline,
+        0.0625rem -0.0625rem 0 $color-button-danger-text-outline,
+        -0.0625rem 0.0625rem 0 $color-button-danger-text-outline,
+        0.0625rem 0.0625rem 0 $color-button-danger-text-outline;
+
+      &:hover {
+        background: linear-gradient(
+          180deg,
+          $color-button-danger-background-light-hover 0%,
+          $color-button-danger-background-dark-hover 100%
+        );
+        text-shadow: -0.0625rem -0.0625rem 0 $color-button-danger-text-outline-hover,
+          0.0625rem -0.0625rem 0 $color-button-danger-text-outline-hover,
+          -0.0625rem 0.0625rem 0 $color-button-danger-text-outline-hover,
+          0.0625rem 0.0625rem 0 $color-button-danger-text-outline-hover;
+      }
+
+      &:active {
+        background: linear-gradient(
+          180deg,
+          $color-button-danger-background-dark-hover 0%,
+          $color-button-danger-background-light-hover 100%
+        );
+        text-shadow: -0.0625rem -0.0625rem 0 $color-button-danger-text-outline-hover,
+          0.0625rem -0.0625rem 0 $color-button-danger-text-outline-hover,
+          -0.0625rem 0.0625rem 0 $color-button-danger-text-outline-hover,
+          0.0625rem 0.0625rem 0 $color-button-danger-text-outline-hover;
+      }
+    }
+  }
+
+  .credit {
+    & + & {
+      margin-top: calculateVh(50);
+    }
+
+    &__resources {
+      font-size: clamp(0.875rem, calculateVh(48), calculateVh(48));
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    &__url {
+      font-size: clamp(0.75rem, calculateVh(28), calculateVh(28));
+      text-decoration: none;
+      color: $color-credit-url;
+
+      &:hover {
+        color: lighten($color-credit-url, 10%);
+      }
+    }
+  }
+}
+
+// Option panel in 16:9
+@media #{$media-ratio-16-9} {
+  .options__card {
+    width: calc(#{100% / 3} - #{calculateVh(16 * 2 / 3)});
+
+    &:nth-child(-n + 3) {
+      margin: 0;
+    }
+  }
+}
+
+// Large screen with non-standard aspect ratio
+@media (min-aspect-ratio: 16/7) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  #app {
+    overflow: hidden;
+    width: 100vw;
+    height: 56.25vw;
+    max-height: 100vh;
+    max-width: 177.78vh;
+  }
+}

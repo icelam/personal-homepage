@@ -1,0 +1,357 @@
+// protrait
+html {
+  height: 100%;
+  position: relative;
+}
+
+#app {
+  height: 100%;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.scene {
+  overflow: hidden;
+  background: url('~@images/room.jpg') center center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.time {
+  font-weight: bold;
+  font-family: 'Futura';
+  font-size: calculateMobileVw(22);
+  line-height: 1em;
+  color: $color-time-text;
+  -webkit-text-stroke: 0.0625rem $color-time-stoke;
+  -webkit-text-fill-color: $color-time-text;
+  text-shadow: 0px 0.1875rem 0.1875rem $color-time-shadow;
+  padding: calculateMobileVw(16) calculateMobileVw(14) calculateMobileVw(12)
+    calculateMobileVw(18);
+  border-bottom: clamp(0.125rem, calculateMobileVw(2), 0.25rem) solid
+    $color-time-border;
+}
+
+.scene-content {
+  overflow: hidden;
+  flex: 1 1 auto;
+  display: flex;
+  width: 100%;
+  padding: calculateMobileVw(16) calculateMobileVw(16) calculateMobileVw(30);
+}
+
+.options {
+  flex: 1 1 auto;
+  width: 100%;
+  background-color: $color-options-wrapper-background;
+  border-radius: calculateMobileVw(10);
+  padding: calculateMobileVw(15);
+
+  &__card {
+    background: $color-options-button-background;
+    padding: calculateMobileVw(6);
+    border-radius: calculateMobileVw(4);
+    border: clamp(0.125rem, calculateMobileVw(2), 0.25rem) solid
+      $color-options-button-border;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    margin: calculateMobileVw(16) 0 0;
+    position: relative;
+
+    &:hover {
+      background: repeating-linear-gradient(
+        -45deg,
+        $color-options-button-background-hover-light,
+        $color-options-button-background-hover-light calculateMobileVw(4),
+        $color-options-button-background-hover-dark calculateMobileVw(4),
+        $color-options-button-background-hover-dark calculateMobileVw(8)
+      );
+      color: $color-options-button-text-hover;
+    }
+
+    &:active {
+      background: $color-options-button-background-active;
+      border-color: $color-options-button-border-active;
+      color: $color-options-button-text-active;
+    }
+
+    &:nth-child(1) {
+      margin: 0;
+    }
+
+    &__image {
+      display: none;
+    }
+
+    &__description {
+      text-align: center;
+      font-size: calculateMobileVw(16);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &--new:before {
+      background: url('~@images/new.svg') top right / cover no-repeat;
+      width: calculateMobileVw(47);
+      height: calculateMobileVw(15);
+      position: absolute;
+      top: calculateMobileVw(-7);
+      right: calculateMobileVw(2);
+      content: ' ';
+    }
+  }
+}
+
+.character {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calculateMobileVw(100);
+  z-index: 1;
+}
+
+.dialog {
+  height: calculateMobileVw(100);
+  position: relative;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: $color-dialog-background;
+  flex: 0 0 calculateMobileVw(100);
+
+  &__tag {
+    height: calculateMobileVw(18);
+    width: calculateMobileVw(114);
+    position: absolute;
+    bottom: 0;
+    left: -0.625rem;
+    z-index: 2;
+    min-width: min-content;
+
+    &__background {
+      width: 100%;
+      height: 100%;
+      transform: skew(30deg, 0);
+      background: repeating-linear-gradient(
+        -35deg,
+        $color-dialog-tag-background-light,
+        $color-dialog-tag-background-light calculateMobileVw(4),
+        $color-dialog-tag-background-dark calculateMobileVw(4),
+        $color-dialog-tag-background-dark calculateMobileVw(8)
+      );
+    }
+
+    &__text {
+      width: 100%;
+      min-width: min-content;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      white-space: nowrap;
+      padding: 0 0.75rem;
+      font-size: calculateMobileVw(12);
+      line-height: calculateMobileVw(18);
+      text-align: center;
+      color: $color-dialog-text;
+    }
+  }
+
+  &__content {
+    width: 64%;
+    margin: calculateMobileVw(34) 0 0 auto;
+    font-size: calculateMobileVw(14);
+    color: $color-dialog-text;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.controls {
+  position: absolute;
+  right: calculateMobileVw(16);
+  top: calculateMobileVw(-17.5);
+  display: flex;
+
+  &__button > svg {
+    cursor: pointer;
+    width: auto;
+    height: calculateMobileVw(35);
+    margin-left: calculateMobileVw(10);
+    border: 0;
+  }
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: $color-modal-overlay;
+  padding: calculateMobileVw(16);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.2s linear;
+
+  &--open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  &__wrapper {
+    width: 100%;
+    background-color: $color-modal-background;
+    border: clamp(0.125rem, calculateMobileVw(2), 0.25rem) solid
+      $color-modal-border;
+    border-radius: calculateMobileVw(10);
+    box-shadow: 0 0 calculateMobileVw(10) $color-modal-shadow;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: all 0.3s linear;
+  }
+
+  &--open &__wrapper {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &__header {
+    color: $color-modal-text;
+    height: calculateMobileVw(40);
+    font-size: calculateMobileVw(18);
+    line-height: calculateMobileVw(20);
+    padding: calculateMobileVw(10);
+    text-align: center;
+    background: repeating-linear-gradient(
+      -45deg,
+      $color-dialog-tag-background-light,
+      $color-dialog-tag-background-light calculateMobileVw(4),
+      $color-dialog-tag-background-dark calculateMobileVw(4),
+      $color-dialog-tag-background-dark calculateMobileVw(8)
+    );
+    box-shadow: 0 calculateMobileVw(5) calculateMobileVw(5) $color-modal-shadow;
+  }
+
+  &__content {
+    // 16px for padding * 2 + 40px header + 60px footer + 80px for address bar on mobile
+    max-height: calc(100vh - #{calculateMobileVw(16 * 2 + 40 + 60 + 80)});
+    padding: calculateMobileVw(20);
+    color: $color-modal-text;
+  }
+
+  &__footer {
+    height: calculateMobileVw(60);
+    background: repeating-linear-gradient(
+      -45deg,
+      $color-modal_header-footer-background-light,
+      $color-dialog-tag-background-light calculateMobileVw(4),
+      $color-dialog-tag-background-dark calculateMobileVw(4),
+      $color-dialog-tag-background-dark calculateMobileVw(8)
+    );
+    box-shadow: 0 calculateMobileVw(-5) calculateMobileVw(5) $color-modal-shadow;
+    padding: calculateMobileVw(10);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.button {
+  padding: calculateMobileVw(8) calculateMobileVw(30);
+  border: clamp(0.125rem, calculateMobileVw(2), 0.25rem) solid
+    $color-button-border;
+  outline: none;
+  box-shadow: inset 0 0 calculateMobileVw(3) $color-button-inner-shadow;
+  color: $color-button-text;
+  border-radius: calculateMobileVw(4);
+  font-family: inherit;
+  font-size: calculateMobileVw(16);
+  line-height: 1em;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &--danger {
+    background: linear-gradient(
+      180deg,
+      $color-button-danger-background-light 0%,
+      $color-button-danger-background-dark 100%
+    );
+
+    text-shadow: -0.0625rem -0.0625rem 0 $color-button-danger-text-outline,
+      0.0625rem -0.0625rem 0 $color-button-danger-text-outline,
+      -0.0625rem 0.0625rem 0 $color-button-danger-text-outline,
+      0.0625rem 0.0625rem 0 $color-button-danger-text-outline;
+  }
+
+  &:hover {
+    background: linear-gradient(
+      180deg,
+      $color-button-danger-background-light-hover 0%,
+      $color-button-danger-background-dark-hover 100%
+    );
+    text-shadow: -0.0625rem -0.0625rem 0 $color-button-danger-text-outline-hover,
+      0.0625rem -0.0625rem 0 $color-button-danger-text-outline-hover,
+      -0.0625rem 0.0625rem 0 $color-button-danger-text-outline-hover,
+      0.0625rem 0.0625rem 0 $color-button-danger-text-outline-hover;
+  }
+
+  &:active {
+    background: linear-gradient(
+      180deg,
+      $color-button-danger-background-dark-hover 0%,
+      $color-button-danger-background-light-hover 100%
+    );
+    text-shadow: -0.0625rem -0.0625rem 0 $color-button-danger-text-outline-hover,
+      0.0625rem -0.0625rem 0 $color-button-danger-text-outline-hover,
+      -0.0625rem 0.0625rem 0 $color-button-danger-text-outline-hover,
+      0.0625rem 0.0625rem 0 $color-button-danger-text-outline-hover;
+  }
+}
+
+.credit {
+  & + & {
+    margin-top: calculateMobileVw(20);
+  }
+
+  &__resources {
+    font-size: calculateMobileVw(14);
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  &__url {
+    font-size: calculateMobileVw(12);
+    text-decoration: none;
+    color: lighten($color-modal-background, 80%);
+
+    &:hover {
+      color: lighten($color-credit-url, 10%);
+    }
+  }
+}

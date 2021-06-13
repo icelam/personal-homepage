@@ -1,0 +1,9 @@
+@function calculateVh($height) {
+  $result: ($height / 1080 * 100) + 0vh;
+  @return $result;
+}
+
+@function calculateMobileVw($width) {
+  $result: ($width / 320 * 100) + 0vw;
+  @return $result;
+}
