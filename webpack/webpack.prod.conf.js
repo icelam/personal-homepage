@@ -33,7 +33,7 @@ module.exports = merge(baseWebpackConfig, {
   bail: true,
   output: {
     filename: 'assets/js/[name].[chunkhash:8].js',
-    chunkFilename: 'assets/js/[name].[chunkhash:8].chunk.js'
+    chunkFilename: 'assets/js/[name].[chunkhash:8].chunk.js',
   },
   plugins: [
     new Webpack.DefinePlugin(clientEnv.stringified),
