@@ -4,6 +4,7 @@ include ../data/credits
 
 //- mixins
 include ../mixins/icon-buttons
+include ../mixins/project-icons
 
 .screen
   .scene
@@ -18,7 +19,9 @@ include ../mixins/icon-buttons
             a.options__card(href=link['url'] class=link['new'] ? 'options__card--new' : '')
               .options__card__image
                 img(src=link['image'] alt=link['name'])
-              .options__card__description #{link['name']}
+              .options__card__description
+                +project-icons(icon=link['icon'])
+                span #{link['name']}
 
       img.character(src="~@images/character.png" alt="Character - myself")
 
