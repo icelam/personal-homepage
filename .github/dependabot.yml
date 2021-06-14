@@ -1,0 +1,19 @@
+# Basic dependabot.yml file with
+# https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates#example-dependabotyml-file
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    target-branch: "develop"
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore"
+      include: "scope"
+    reviewers:
+      - "icelam"
+    open-pull-requests-limit: 5

@@ -59,7 +59,7 @@ html {
 
   &__card {
     background: $color-options-button-background;
-    padding: calculateMobileVw(6);
+    padding: calculateMobileVw(6) calculateMobileVw(12);
     border-radius: calculateMobileVw(4);
     border: clamp(0.125rem, calculateMobileVw(2), 0.25rem) solid
       $color-options-button-border;
@@ -100,6 +100,19 @@ html {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      display: flex;
+      align-items: center;
+
+      span {
+        flex: 1 0 auto;
+      }
+
+      svg {
+        flex: 0 0 auto;
+        height: 1.5em;
+        width: auto;
+        vertical-align: middle;
+      }
     }
 
     &--new:before {

@@ -1,3 +1,5 @@
+const characterEscape = (character) => `&#${character.charCodeAt(0)};`;
+
 const typewriterEffect = (destination: HTMLElement, callback?: () => any, speed = 100): void => {
   const dialogTexts = JSON.parse(destination.getAttribute('data-text') ?? '');
   const totalNumberOfLines = dialogTexts.length;
@@ -13,7 +15,7 @@ const typewriterEffect = (destination: HTMLElement, callback?: () => any, speed 
     }
 
     // Append character
-    currentParagraph.innerHTML += dialogTexts[currentLine][currentTextPosition];
+    currentParagraph.innerHTML += characterEscape(dialogTexts[currentLine][currentTextPosition]);
     currentTextPosition++;
 
     // Go to next line if current line is fully displayed

@@ -1,0 +1,45 @@
+name: Build
+on:
+  push:
+    branches:
+      - 'develop'
+      - 'master'
+    tags-ignore:
+      - '**' #prevent double build on release tag
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@main
+      - name: Setup Node.js version
+        uses: actions/setup-node@main
+        with:
+          node-version: 12.16.1
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Restore yarn cache
+        uses: actions/cache@v1
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install dependencies
+        run: |
+          yarn install --frozen-lockfile
+      - name: Build
+        run: |
+          yarn build
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist # artifacts zip name
+          path: |
+            dist
