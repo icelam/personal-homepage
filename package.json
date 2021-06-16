@@ -1,6 +1,6 @@
 {
   "name": "personal-homepage",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A landing page developed for https://pinkylam.me",
   "private": true,
   "scripts": {
