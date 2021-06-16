@@ -99,9 +99,11 @@
         width: 100%;
         padding: calculateVh(15) calculateVh(8);
 
+        picture,
         img {
           display: block;
           width: 100%;
+          height: auto;
           border: 0;
         }
       }
@@ -138,6 +140,12 @@
     width: auto;
     margin-right: 5%;
     align-self: flex-end;
+
+    img {
+      height: 100%;
+      width: auto;
+      display: block;
+    }
   }
 
   .dialog {
