@@ -133,6 +133,12 @@ html {
   left: 0;
   width: calculateMobileVw(100);
   z-index: 1;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
 .dialog {
