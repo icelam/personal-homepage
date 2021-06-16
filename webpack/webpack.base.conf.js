@@ -79,7 +79,7 @@ module.exports = {
         loader: 'html-loader'
       },
       {
-        test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif|svg|ico|webp)(\?.*)?$/,
         exclude: [
           path.resolve(__dirname, '../src/assets/fonts')
         ],
