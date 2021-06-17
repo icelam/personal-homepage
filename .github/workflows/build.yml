@@ -9,10 +9,14 @@ on:
   pull_request:
     branches:
       - '**'
+  issue_comment:
+    types:
+      - 'created'
 
 jobs:
   build:
     runs-on: ubuntu-18.04
+    if: contains(fromJson('["opened", "reopened", "synchronize"]'), github.event.action) || github.event.issue.pull_request != '' && contains(github.event.comment.body, '/rebase')
     steps:
       - name: Checkout repo
         uses: actions/checkout@main
