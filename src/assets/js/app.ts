@@ -65,14 +65,6 @@ const creditModalToggleHandler = () => {
   element?.addEventListener('click', creditModalToggleHandler);
 });
 
-/*
- * Animation: Dialog typewriter + Option panel fade in
- */
-const dialogContent = document.getElementById('dialog-content');
-if (dialogContent) {
-  typewriterEffect(dialogContent);
-}
-
 /**
  * On app ready
  */
@@ -94,5 +86,11 @@ window.addEventListener('load', () => {
       CREDIT_MODAL_SCROLLABLE_ELEMENT,
       { autoHide: false }
     );
+  }
+
+  // Animation: Dialog typewriter + Option panel fade in
+  const dialogContent = document.getElementById('dialog-content');
+  if (dialogContent) {
+    typewriterEffect(dialogContent);
   }
 });
