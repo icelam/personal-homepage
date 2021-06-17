@@ -9,6 +9,11 @@ on:
   pull_request:
     branches:
       - '**'
+  workflow_run:
+    workflows:
+      - 'Automatic Rebase'
+    types:
+      - 'completed'
 
 jobs:
   build:
