@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/icelam/personal-homepage/compare/v1.2.0...v1.3.0) (2021-06-18)
+
+
+### Features
+
+* defer running of typewriter effect until page is loaded ([36f7b63](https://github.com/icelam/personal-homepage/commit/36f7b6397ca54a451b7d33e39ce24c69083a9e31))
+* **accessibility:** allow page zooming on mobile devices ([deddd5c](https://github.com/icelam/personal-homepage/commit/deddd5c44453a1407b3a4be2748dfb4848c74542))
+
 ## [1.2.0](https://github.com/icelam/personal-homepage/compare/v1.1.0...v1.2.0) (2021-06-16)
 
 
