@@ -33,7 +33,36 @@ module.exports = merge(baseWebpackConfig, {
   bail: true,
   output: {
     filename: 'assets/js/[name].[chunkhash:8].js',
-    chunkFilename: 'assets/js/[name].[chunkhash:8].chunk.js',
+    chunkFilename: 'assets/js/[name].[chunkhash:8].chunk.js'
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: (() => {
+        // Optimize CSS chunks so that it doesn't combine into 1 giant file
+        const CSS_FOLDER_PATH = path.resolve(__dirname, '../src/assets/scss/');
+        const cacheGroupsConfig = {};
+        const cssChunks = fs.readdirSync(CSS_FOLDER_PATH)
+          .filter((filename) => {
+            const fileStats = fs.statSync(path.join(CSS_FOLDER_PATH, filename));
+            return fileStats.isFile() && /^(?!_)(.+)\.scss(\?.*)?$/.test(filename);
+          })
+          .map((name) => name.replace(/\.s?css/i, ''));
+
+        cssChunks.forEach((chunk) => {
+          cacheGroupsConfig[chunk] = {
+            name: chunk,
+            test: new RegExp(`${chunk}\\.s?css$`),
+            chunks: 'all',
+            minChunks: 1,
+            reuseExistingChunk: true,
+            enforce: true
+          };
+        });
+
+        return cacheGroupsConfig;
+      })()
+    }
   },
   plugins: [
     new Webpack.DefinePlugin(clientEnv.stringified),

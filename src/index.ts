@@ -1,8 +1,12 @@
 // polyfills
 import 'core-js/stable';
 
-// styles
-import '@styles/index.scss';
+// styles - order matters
+// base -> mobile -> desktop -> scroll bar styles
+import '@styles/base.scss';
+import '@styles/portrait.scss';
+import '@styles/landscape.scss';
+import '@styles/simplebar.scss';
 
 // main
 import '@js/app';
