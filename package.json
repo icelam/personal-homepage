@@ -19,7 +19,7 @@
     "@commitlint/config-conventional": "^16.0.0",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^9.8.8",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-plugin-transform-remove-debugger": "^6.9.4",
