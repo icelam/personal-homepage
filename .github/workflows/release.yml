@@ -29,7 +29,7 @@ jobs:
           elif [[ $result ]]; then
               echo "Release body generated."
           else
-              echo "This is the first release, useing different command to generate release body."
+              echo "This is the first release, using different command to generate release body."
               npx rexreplace "(#+ \[?\d+\.\d+\.\d+]?.*)" "_" -s -M -G -m -o "CHANGELOG.md" > RELEASE_BODY.md
           fi
       - name: Create release
