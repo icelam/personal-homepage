@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js version
         uses: actions/setup-node@main
         with:
-          node-version: 12.16.1
+          node-version: 14.x
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
