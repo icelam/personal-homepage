@@ -24,7 +24,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-plugin-transform-remove-debugger": "^6.9.4",
     "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^9.0.1",
+    "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.6.0",
     "dotenv": "^16.0.0",
     "eslint": "^7.32.0",
