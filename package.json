@@ -34,7 +34,7 @@
     "html-loader": "^2.1.2",
     "html-variables-plugin": "^1.0.0",
     "html-webpack-plugin": "^5.5.0",
-    "husky": "^7.0.0",
+    "husky": "^7.0.4",
     "lint-staged": "^12.3.4",
     "mini-css-extract-plugin": "^2.5.3",
     "node-sass": "^7.0.1",
