@@ -5,15 +5,15 @@
 <title>New</title>
 <desc>Newly added item.</desc>
 <style type="text/css">
-	.st0{fill:#5E2026;}
-	.st1{fill:url(#SVGID_1_);}
-	.st2{fill:url(#SVGID_2_);}
-	.st3{fill:url(#SVGID_3_);}
-	.st4{fill:url(#SVGID_4_);}
-	.st5{fill:url(#SVGID_5_);}
-	.st6{fill:url(#SVGID_6_);}
+	.new-svg .st0{fill:#5E2026;}
+	.new-svg .st1{fill:url(#SVGID_1_);}
+	.new-svg .st2{fill:url(#SVGID_2_);}
+	.new-svg .st3{fill:url(#SVGID_3_);}
+	.new-svg .st4{fill:url(#SVGID_4_);}
+	.new-svg .st5{fill:url(#SVGID_5_);}
+	.new-svg .st6{fill:url(#SVGID_6_);}
 </style>
-<g>
+<g class="new-svg">
 	<g>
 		<g>
 			<path class="st0" d="M92.9,21.8c-0.2-0.4-0.3-0.7-0.5-1c0.2-0.4,0.3-0.9,0.3-1.4V4c0-1.7-1.3-3-3-3h-5.8c-0.6,0-1.1,0.2-1.5,0.4
