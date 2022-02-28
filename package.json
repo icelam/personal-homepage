@@ -56,7 +56,7 @@
   },
   "dependencies": {
     "core-js": "^3.21.1",
-    "simplebar": "^5.3.4"
+    "simplebar": "^5.3.6"
   },
   "browserslist": [
     ">0.2%",
