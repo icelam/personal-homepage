@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.3.1](https://github.com/icelam/personal-homepage/compare/v1.3.0...v1.3.1) (2022-03-25)
+
+
+### Bug Fixes
+
+* protential css conflicts of inline svg files ([3a8a9ca](https://github.com/icelam/personal-homepage/commit/3a8a9cab84825a078d74af54d5d93bca1b20b42a))
+
 ## [1.3.0](https://github.com/icelam/personal-homepage/compare/v1.2.0...v1.3.0) (2021-06-18)
 
 
