@@ -24,7 +24,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-plugin-transform-remove-debugger": "^6.9.4",
     "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^10.2.4",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "dotenv": "^16.0.1",
     "eslint": "^7.32.0",
@@ -55,7 +55,7 @@
     "workbox-webpack-plugin": "^6.5.3"
   },
   "dependencies": {
-    "core-js": "^3.22.5",
+    "core-js": "^3.22.6",
     "simplebar": "^5.3.6"
   },
   "browserslist": [
