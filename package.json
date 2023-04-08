@@ -16,7 +16,7 @@
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "@commitlint/cli": "^17.4.2",
-    "@commitlint/config-conventional": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.4",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "autoprefixer": "^9.8.8",
