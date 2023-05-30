@@ -71,15 +71,17 @@ html {
     margin: calculateMobileVw(16) 0 0;
     position: relative;
 
-    &:hover {
-      background: repeating-linear-gradient(
-        -45deg,
-        $color-options-button-background-hover-light,
-        $color-options-button-background-hover-light calculateMobileVw(4),
-        $color-options-button-background-hover-dark calculateMobileVw(4),
-        $color-options-button-background-hover-dark calculateMobileVw(8)
-      );
-      color: $color-options-button-text-hover;
+    @media (pointer: fine) {
+      &:hover {
+        background: repeating-linear-gradient(
+          -45deg,
+          $color-options-button-background-hover-light,
+          $color-options-button-background-hover-light calculateMobileVw(4),
+          $color-options-button-background-hover-dark calculateMobileVw(4),
+          $color-options-button-background-hover-dark calculateMobileVw(8)
+        );
+        color: $color-options-button-text-hover;
+      }
     }
 
     &:active {
