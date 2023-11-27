@@ -44,7 +44,7 @@
     "pug-html-loader": "^1.1.5",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
-    "ts-loader": "^9.4.4",
+    "ts-loader": "^9.5.1",
     "typescript": "^5.2.2",
     "uuid": "^9.0.1",
     "webpack": "^5.89.0",
