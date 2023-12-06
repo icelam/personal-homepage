@@ -55,7 +55,7 @@
     "workbox-webpack-plugin": "^7.0.0"
   },
   "dependencies": {
-    "core-js": "^3.33.1",
+    "core-js": "^3.34.0",
     "simplebar": "^6.2.5"
   },
   "browserslist": [
